@@ -197,6 +197,7 @@ function seleccionarPaciente(cedula, nombre, apellido, correo) {
     // Actualizar main content
     document.getElementById('welcomeSection').style.display = 'none';
     document.getElementById('pacienteInfo').style.display = 'block';
+    document.getElementById('historiaClinicaSection').style.display = 'flex';
     document.getElementById('pacienteNombre').textContent = `${nombre} ${apellido}`;
     document.getElementById('pacienteCedula').textContent = cedula;
     document.getElementById('pacienteCorreo').textContent = correo;
@@ -212,14 +213,15 @@ function seleccionarPaciente(cedula, nombre, apellido, correo) {
 function limpiarSeleccion() {
     document.getElementById('welcomeSection').style.display = 'block';
     document.getElementById('pacienteInfo').style.display = 'none';
+    document.getElementById('historiaClinicaSection').style.display = 'none';
     document.querySelectorAll('.paciente-item').forEach(el => el.classList.remove('active'));
     
-    // Limpiar sidebar derecha
+    // Limpiar sección de historia
     cedulaPacienteSeleccionado = null;
     document.getElementById('sidebarHistoria').innerHTML = `
         <div class="empty-state">
-            <span class="empty-icon">👤</span>
-            <p>Selecciona un paciente para ver su historia clínica</p>
+            <span class="empty-icon">📋</span>
+            <p>No hay registros de historia clínica</p>
         </div>`;
     document.getElementById('btnAgregarHistoria').disabled = true;
 }
@@ -451,13 +453,6 @@ async function cargarHistoriaClinica(cedula) {
         const pacienteData = paciente.data?.[0];
 
         let html = '';
-        if (pacienteData) {
-            html += `
-                <div class="paciente-info">
-                    <h4>${escHtml(pacienteData.nombre)} ${escHtml(pacienteData.apellido)}</h4>
-                    <p>Cédula: ${escHtml(pacienteData.cedula)}</p>
-                </div>`;
-        }
 
         html += `
             <table class="historia-table">

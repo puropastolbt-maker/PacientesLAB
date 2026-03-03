@@ -880,6 +880,7 @@ tbody td {
     gap: 1.5rem;
     padding: 0 1.25rem;
     overflow-y: auto;
+    max-height: calc(100vh - 180px);
 }
 
 /* ─── Sidebar ─── */
@@ -1115,63 +1116,35 @@ tbody td {
     font-size: 1rem;
 }
 
-/* ─── Historia Table en Sidebar ─── */
-.historia-table {
-    width: 100%;
-    font-size: .85rem;
-}
-
-.historia-table thead th {
-    background: var(--surface2);
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: .05em;
-    font-size: .7rem;
-    padding: .6rem .8rem;
-    text-align: left;
-    border-bottom: 1px solid var(--border);
-}
-
-.historia-table tbody tr {
-    border-bottom: 1px solid var(--border);
-    transition: background var(--transition);
-}
-
-.historia-table tbody tr:last-child {
-    border-bottom: none;
-}
-
-.historia-table tbody tr:hover {
-    background: var(--surface2);
-}
-
-.historia-table tbody td {
-    padding: .7rem .8rem;
-    vertical-align: middle;
-}
-
-.historia-table .fecha-cell {
-    color: var(--text-muted);
-    font-size: .8rem;
-}
-
-.historia-table .texto-cell {
-    color: var(--text-muted);
-    font-size: .8rem;
-    max-width: 200px;
-    white-space: nowrap;
+/* ─── Historia Clínica Section (en main content) ─── */
+.historia-section {
+    padding: 0;
     overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.historia-table .actions-cell {
     display: flex;
-    gap: .3rem;
+    flex-direction: column;
+    flex-shrink: 0;
 }
 
-.historia-table .btn-icon {
-    padding: .35rem .45rem;
-    font-size: .7rem;
+.historia-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface2);
+}
+
+.historia-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.historia-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    max-height: 600px;
 }
 
 /* ─── Paciente Info Header ─── */

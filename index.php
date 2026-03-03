@@ -129,6 +129,26 @@
                 </div>
             </section>
 
+            <!-- HISTORIA CLÍNICA -->
+            <section id="historiaClinicaSection" class="card historia-section" style="display:none;">
+                <div class="historia-header">
+                    <h3 class="historia-title">📋 Historia Clínica</h3>
+                    <button id="btnAgregarHistoria" class="btn btn-success btn-sm" onclick="abrirModalAgregarHistoria()">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                        Agregar Registro
+                    </button>
+                </div>
+                <div id="sidebarHistoria" class="historia-content">
+                    <div class="empty-state">
+                        <span class="empty-icon">📋</span>
+                        <p>No hay registros de historia clínica</p>
+                    </div>
+                </div>
+            </section>
+
             <section class="card welcome-section" id="welcomeSection">
                 <div class="welcome-content">
                     <div class="welcome-icon">🏥</div>
@@ -138,28 +158,8 @@
             </section>
         </div>
 
-        <!-- SIDEBAR DERECHA: HISTORIA CLÍNICA -->
-        <aside class="sidebar sidebar-right card">
-            <div class="sidebar-header">
-                <h3 class="sidebar-title">📋 Historia Clínica</h3>
-            </div>
-            
-            <div id="sidebarHistoria" class="sidebar-content">
-                <div class="empty-state">
-                    <span class="empty-icon">👤</span>
-                    <p>Selecciona un paciente para ver su historia clínica</p>
-                </div>
-            </div>
-
-            <div class="sidebar-footer">
-                <button id="btnAgregarHistoria" class="btn btn-success btn-full" onclick="abrirModalAgregarHistoria()" disabled>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="12" y1="5" x2="12" y2="19" />
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                    </svg>
-                    Agregar Registro
-                </button>
-            </div>
+        <!-- SIDEBAR DERECHA: VACÍO (para mantener layout simétrico) -->
+        <aside class="sidebar sidebar-right card" style="visibility: hidden;">
         </aside>
 
     </main>
