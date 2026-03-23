@@ -2,7 +2,7 @@
    script.js – Gestión de Pacientes (AJAX + CRUD)
    ============================================================ */
 
-const API_URL = 'api/pacientes.php';
+const API_URL = '/api/pacientes.php';
 
 /* ═══════════════════════════════════════════════════
    AJAX HELPER  – wrapper sobre XMLHttpRequest
@@ -409,7 +409,7 @@ async function actualizarEstadisticas() {
    HISTORIA CLÍNICA - SIDEBAR
    ═══════════════════════════════════════════════════ */
 
-const API_HISTORIA = 'api/historia_clinica.php';
+const API_HISTORIA = '/api/historia_clinica.php';
 let cedulaPacienteSeleccionado = null;
 
 /* Cargar historia clínica del paciente */

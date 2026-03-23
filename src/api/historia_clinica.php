@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-require_once '../config/connectdb.php';
+require_once __DIR__ . '/../config/connectdb.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
 
